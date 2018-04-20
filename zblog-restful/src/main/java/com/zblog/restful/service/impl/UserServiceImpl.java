@@ -24,8 +24,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public List<User> find(String name){
         EntityWrapper<User> entityWrapper = new EntityWrapper<>();
         if(StringUtils.isNotBlank(name)) {
-            entityWrapper.eq("realName", name);
+            entityWrapper.eq("user_name", name);
         }
         return this.selectList(entityWrapper);
+    }
+
+    @Override
+    public User getUser(String name) {
+        EntityWrapper<User> entityWrapper = new EntityWrapper<>();
+        if (StringUtils.isNotBlank(name)) {
+            entityWrapper.eq("user_name", name);
+        }
+        return this.selectOne(entityWrapper);
     }
 }

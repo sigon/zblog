@@ -13,4 +13,6 @@ import java.util.List;
  */
 public interface UserService {
     List<User> find(String name);
+
+    User getUser(String name);
 }

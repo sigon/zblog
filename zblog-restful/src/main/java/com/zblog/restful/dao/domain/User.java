@@ -17,14 +17,20 @@ import java.util.Date;
 @TableName("user")
 public class User extends Model<User> {
 
+//    @TableField("id")
     private Integer id;
-    @TableField("login_name")
-    private String loginName;
-    @TableField("real_name")
-    private String realName;
-    private Integer status;
+    @TableField("user_name")
+    private String userName;
+    @TableField("email")
+    private String email;
+    @TableField("password")
+    private String password;
+    @TableField("state")
+    private String state;
     @TableField("create_date")
     private Date createDate;
+    @TableField("modify_date")
+    private Date modify_date;
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -38,28 +44,36 @@ public class User extends Model<User> {
         this.id = id;
     }
 
-    public String getLoginName() {
-        return loginName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getPassword() {
+        return password;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public Date getCreateDate() {
@@ -68,5 +82,13 @@ public class User extends Model<User> {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public Date getModify_date() {
+        return modify_date;
+    }
+
+    public void setModify_date(Date modify_date) {
+        this.modify_date = modify_date;
     }
 }
